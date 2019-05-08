@@ -12,12 +12,5 @@
 
 
 int main() {
-/* 
-    while(address) {
-        translate();
-        readfromRAM();
-        writestdoutput();
-    }
- */
 
-}
+};

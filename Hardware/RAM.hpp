@@ -2,13 +2,13 @@
 
 class Ram {
     public:
-        Ram& instance();
+        // Ram& instance();
         // Ram& operator=();
-        Ram();
+        // Ram();
         // void read<T>();
     
     private:
-        Ram();
+        // Ram();
         struct Status {
             bool accessed;
             bool dirty;

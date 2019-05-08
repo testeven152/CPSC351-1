@@ -2,29 +2,29 @@
 
 class PageReplacementAlgorithm {
     public:
-        ~PageReplacementAlgorithm();
-        Word findVictim();
-        PageReplacementAlgorithm& getPRA();
-        void updateUsage();
+        // ~PageReplacementAlgorithm();
+        // Word findVictim();
+        // PageReplacementAlgorithm& getPRA();
+        // void updateUsage();
     protected:
-        PageReplacementAlgorithm();
+        // PageReplacementAlgorithm();
     private:
         // OptionMap& options();
 };
 
 class FirstInFirstOutAlgorithm : public PageReplacementAlgorithm {
     public:
-        Word findVictim();
-        FirstInFirstOutAlgorithm();
+        // Word findVictim();
+        // FirstInFirstOutAlgorithm();
     private:
-        Word front;
+        // Word front;
 };
 
 class LeastRecentlyUsedAlgorithm : public PageReplacementAlgorithm {
     public:
-        Word findVictim();
-        LeastRecentlyUsedAlgorithm();
-        void updateUsage();
+        // Word findVictim();
+        // LeastRecentlyUsedAlgorithm();
+        // void updateUsage();
     private:
         // UsedList lruList;
 };
