@@ -5,7 +5,7 @@ class MemoryManager {
         // MemoryManager& instance();
         // MemoryManager();
         // MemoryManager& operator=();
-        // void pageIn();
+        void pageIn();
     private:
         // FreeFrameList freeFrames_;
         // MemoryManager();

@@ -9,8 +9,9 @@ struct Word {
 
 struct Address : public Word {
     public:
-        // Word address();
-        // Word displacement();
-        // Word frame();
-        // Word page();
+        Word address();
+        Word displacement();
+        Word frame();
+        Word page();
 };
+
