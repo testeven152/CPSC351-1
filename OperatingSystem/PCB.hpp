@@ -2,7 +2,7 @@
 
 struct ProcessControlBlock {
     public:
-        PageTable myPageTable;
+        PageTableEntry PageTable[256];
 };
 
 struct PageTableEntry {
@@ -11,10 +11,3 @@ struct PageTableEntry {
     bool valid;
 };
 
-class PageTable {
-    public:
-    PageTable(int pagesize);
-
-    private:
-    PageTableEntry *pages;
-};

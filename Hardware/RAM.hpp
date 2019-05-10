@@ -1,16 +1,17 @@
 
 
-class Ram {
+class RAM {
     public:
         // Ram& instance();
         // Ram& operator=();
         // Ram();
-        // void read<T>();
+        void read(unsigned framenumber, unsigned char& data);
+
+    struct Status {
+        bool accessed;
+        bool dirty;
+    };
     
     private:
         // Ram();
-        struct Status {
-            bool accessed;
-            bool dirty;
-        };
 };
