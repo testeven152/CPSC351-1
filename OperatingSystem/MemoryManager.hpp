@@ -8,7 +8,14 @@ class MemoryManager {
         // MemoryManager& operator=();
         void pageIn(Word pagenumber, ProcessControlBlock& pcb);
     private:
-        // FreeFrameList freeFrames_;
+        FreeFrameList freeFrames_;
         // MemoryManager();
+
+};
+
+struct FreeFrameList {
+    public:
+        bool empty();
+        // front();
 
 };

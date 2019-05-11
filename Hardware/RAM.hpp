@@ -1,10 +1,10 @@
 
 
-class RAM {
+class Ram {
     public:
-        // Ram& instance();
-        // Ram& operator=();
-        // Ram();
+        // Ram& instance(); // ??
+        // Ram& operator=(); // ??
+        Ram(); // ??
         void read(unsigned framenumber, unsigned char& data);
 
     struct Status {
@@ -13,5 +13,11 @@ class RAM {
     };
     
     private:
-        // Ram();
+        // Ram(); // ??
+};
+
+struct FRAME {
+    public:
+        FRAME();
+
 };
