@@ -24,7 +24,7 @@ class Ram {
         
 };
 
-	
+	// Ram is an array of frames
     // This is the same as status. Used frames to see if anything was accessed
 	struct FRAME {
         unsigned char bytes[256];
