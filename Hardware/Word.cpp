@@ -1,5 +1,12 @@
 #include "Word.hpp"
 
+/* int Word::uint32_t(){
+    return (int)this->value_;
+}
+
+void Word::uint32_t(int value){
+    this->value_ = (uint32_t)value;
+} */
 
 Word Address::address(){
     Word temp;

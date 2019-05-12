@@ -1,13 +1,11 @@
 #include "MMU.hpp"
 #include "RAM.hpp"
 
-void MemoryManagementUnit::read(Address logicaladdress, ProcessControlBlock& pcb, unsigned char& data) {
-
-    Ram ram;
+void MemoryManagementUnit::read(Address logicaladdress, ProcessControlBlock& pcb, Ram ram, unsigned char& data) {
 
     if(pcb.PageTable[logicaladdress.page().value_].valid) {
         page_access_count_++;
-        ram.read(pcb.PageTable[logicaladdress.page().value_].frameNumber, data);
+        ram.read(pcb.PageTable[logicaladdress.page().value_].frameNumber,logicaladdress.displacement(), data);
     } else {
         page_access_count_++;
         page_in_faults_++;

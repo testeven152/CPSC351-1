@@ -7,7 +7,7 @@ struct ProcessControlBlock {
 
 struct PageTableEntry {
     public:
-    unsigned frameNumber;
-    bool valid;
+    unsigned frameNumber = 0;
+    bool valid = 0;
 };
 

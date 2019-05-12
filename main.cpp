@@ -23,11 +23,11 @@ int main() {
     ProcessControlBlock PCB;
     MemoryManagementUnit MMU;
     MemoryManager MM;
-    // Ram ram;
+    Ram ram;
 
     while(std::cin >> logicaladdress.value_) { // reads input from addresses.txt. currently reads from value_ because i dont know how to implement int uint32_t()
         try {
-            MMU.read(logicaladdress, PCB, data); // translates logical to physical address. if not throws pagefault
+            MMU.read(logicaladdress, PCB, ram, data); // translates logical to physical address. if not throws pagefault
             std::cout << data; // outputs physical address from data
             break;
         }

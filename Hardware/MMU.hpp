@@ -10,7 +10,7 @@ class MemoryManagementUnit {
         // MemoryManagementUnit& operator=(); // ??
         int pageAccesses();
         int pageFaults();
-        void read(Address logicaladdress, ProcessControlBlock& pcb, unsigned char& data); // used to be read<t>(), have no idea what the template is for.
+        void read(Address logicaladdress, ProcessControlBlock& pcb, Ram ram, unsigned char& data); // used to be read<t>(), have no idea what the template is for.
         int tlbAccesses();
         int tlbFaults();
 
