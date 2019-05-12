@@ -1,5 +1,4 @@
 #include "MMU.hpp"
-#include "RAM.hpp"
 
 MemoryManagementUnit::MemoryManagementUnit(){
     page_access_count_ = 0;
@@ -11,7 +10,6 @@ MemoryManagementUnit::MemoryManagementUnit(){
 
 void MemoryManagementUnit::read(Address logicaladdress, ProcessControlBlock& pcb, Ram ram, unsigned char& data) {
 
-   
     //tlb search
     tlb_access_count_++;
     for(int i = 0; i < 16; i++){

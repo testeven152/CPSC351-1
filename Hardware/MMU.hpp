@@ -1,6 +1,9 @@
+#pragma once
+
 #include "../OperatingSystem/PCB.hpp"
 #include "Word.hpp"
 #include "TLB.hpp"
+#include "RAM.hpp"
 
 class MemoryManagementUnit {
     public:
@@ -10,14 +13,14 @@ class MemoryManagementUnit {
         // MemoryManagementUnit& operator=(); // ??
         int pageAccesses();
         int pageFaults();
-        void read(Address logicaladdress, ProcessControlBlock& pcb, Ram ram, unsigned char& data); // used to be read<t>(), have no idea what the template is for.
+        void read(struct Address logicaladdress, struct ProcessControlBlock& pcb, Ram ram, unsigned char& data); // used to be read<t>(), have no idea what the template is for.
         int tlbAccesses();
         int tlbFaults();
 
     struct PageFault {
         public:
-            PageFault(Address pagenumber);
-            Word pageNumber_;
+            PageFault(struct Address pagenumber);
+            struct Word pageNumber_;
     };
 
     private:

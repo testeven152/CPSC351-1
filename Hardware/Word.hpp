@@ -1,3 +1,4 @@
+#pragma once
 
 using std::uint32_t;
 
@@ -9,9 +10,8 @@ struct Word {
 };
 
 struct Address : public Word {
-    public:
-        Word address();
-        Word displacement();
-        Word frame();
-        Word page();
+        struct Word address();
+        struct Word displacement();
+        struct Word frame();
+        struct Word page();
 };

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../Hardware/Word.hpp"
 #include "PCB.hpp"
 
@@ -6,15 +8,14 @@ class MemoryManager {
         // MemoryManager& instance();
         // MemoryManager();
         // MemoryManager& operator=();
-        void pageIn(Word pagenumber, ProcessControlBlock& pcb);
+        void pageIn(struct Word pagenumber, struct ProcessControlBlock& pcb);
     private:
-        FreeFrameList freeFrames_;
+        struct FreeFrameList freeFrames_;
         // MemoryManager();
 
 };
 
 struct FreeFrameList {
-    public:
         bool empty();
         // front();
 

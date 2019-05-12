@@ -13,9 +13,9 @@ using std::string;
 
 int main() {
 
-    Address logicaladdress;
+    struct Address logicaladdress;
     unsigned char data;
-    ProcessControlBlock PCB;
+    struct ProcessControlBlock PCB;
     MemoryManagementUnit MMU;
     MemoryManager MM;
     Ram ram;
@@ -26,7 +26,7 @@ int main() {
             std::cout << data; // outputs physical address from data
             break;
         }
-        catch(MemoryManagementUnit::PageFault &pf) { // page fault exception catch. 
+        catch(struct MemoryManagementUnit::PageFault &pf) { // page fault exception catch. 
             MM.pageIn(pf.pageNumber_, PCB);
         }
     };

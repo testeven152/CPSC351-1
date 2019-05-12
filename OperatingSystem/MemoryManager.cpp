@@ -1,6 +1,6 @@
 #include "MemoryManager.hpp"
 
-void MemoryManager::pageIn(Word pagenumber, ProcessControlBlock& pcb){
+void MemoryManager::pageIn(struct Word pagenumber, struct ProcessControlBlock& pcb){
     if(!freeFrames_.empty()) {
         // need to implement freeframeslist before implementing this function
         // framenumber = freeFrames_.front();

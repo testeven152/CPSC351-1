@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Word.hpp"
 #include "RAM.hpp"
 #include <fstream>
@@ -10,7 +12,7 @@ class BackingStore {
         BackingStore();
         // BackingStore& instance();
         // BackingStore& operator=();
-        void read(Word page, FRAME & data);
+        void read(struct Word page, struct FRAME & data);
     private:
         std::basic_ifstream<char> media;
         BackingStore();

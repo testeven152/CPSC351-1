@@ -1,8 +1,8 @@
-
+#pragma once
 
 struct ProcessControlBlock {
     public:
-        PageTableEntry PageTable[256]; //simple yet effective
+        struct PageTableEntry PageTable[256]; //simple yet effective
 };
 
 struct PageTableEntry {

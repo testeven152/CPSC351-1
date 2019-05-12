@@ -1,12 +1,12 @@
-
+#pragma once
 
 class TLB {
     public:
-        TLBentry table[16]; //simple yet effective
+        struct TLBentry table[16]; //simple yet effective
 };
 
 struct TLBentry {
     public:
-        Word pagenumber;
-        Word framenumber;
+        struct Word pagenumber;
+        struct Word framenumber;
 };
