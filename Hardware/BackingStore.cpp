@@ -10,6 +10,8 @@ void BackingStore::read(struct Word page, struct FRAME & data){
 
 BackingStore::BackingStore() 
 {
+	//Constructor for the backing store
+	//Reads it in
 	media("BackingStore.bin", ios::binary);
 	if (media)
 	{
