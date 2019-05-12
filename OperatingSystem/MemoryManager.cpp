@@ -12,3 +12,7 @@ void MemoryManager::pageIn(struct Word pagenumber, struct ProcessControlBlock& p
         
     }
 }
+
+bool FreeFrameList::empty() {
+
+}
