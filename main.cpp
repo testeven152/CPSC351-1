@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using std::string;
 
@@ -30,6 +31,23 @@ int main() {
             MM.pageIn(pf.pageNumber_, PCB);
         }
     };
+
+	//The implementation to outputting to a file
+	//Commented out for now until we finish
+
+	/*
+	
+	ofstream outputFile;
+	outputFile.open("output.txt");
+	while(!outputFile.eof())
+		{
+			outputFile << "Virtual Address: " << logicalAddress 
+						<< "Physical Address: " << ((frameNumber << 8) | offset)
+						<< "Value: " << data << endl;
+		}
+	outputFile.close();
+	
+	*/
 
     // Below displays page fault rate and tlb hit rate
     double pagefaultrate = (MMU.pageFaults()/MMU.pageAccesses());
