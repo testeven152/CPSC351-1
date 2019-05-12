@@ -10,8 +10,8 @@ class BackingStore {
         BackingStore();
         // BackingStore& instance();
         // BackingStore& operator=();
-        void read(Word page, unsigned char & data);
+        void read(Word page, FRAME & data);
     private:
         std::basic_ifstream<char> media;
-        // BackingStore()
+        BackingStore();
 };

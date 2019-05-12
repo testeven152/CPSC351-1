@@ -1,6 +1,14 @@
 #include "MMU.hpp"
 #include "RAM.hpp"
 
+MemoryManagementUnit::MemoryManagementUnit(){
+    page_access_count_ = 0;
+    page_in_faults_ = 0;
+    tlb_access_count_ = 0;
+    tlb_faults_ = 0;
+    clearTLB();
+}
+
 void MemoryManagementUnit::read(Address logicaladdress, ProcessControlBlock& pcb, Ram ram, unsigned char& data) {
 
     if(pcb.PageTable[logicaladdress.page().value_].valid) {
@@ -31,4 +39,11 @@ int MemoryManagementUnit::tlbAccesses(){
 
 int MemoryManagementUnit::tlbFaults(){
     return this->tlb_faults_;
+}
+
+void MemoryManagementUnit::clearTLB(){
+    for (int i = 0; i < 16; i++) {
+        tlb_.table[i].framenumber.value_ = 0;
+        tlb_.table[i].pagenumber.value_ = 0;
+    }
 }

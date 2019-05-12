@@ -4,9 +4,9 @@
 
 class MemoryManagementUnit {
     public:
-        // void clearTLB();
+        void clearTLB();
         // MemoryManagementUnit& instance(); // ??
-        // MemoryManagementUnit(); // not sure what this does yet
+        MemoryManagementUnit(); // not sure what this does yet
         // MemoryManagementUnit& operator=(); // ??
         int pageAccesses();
         int pageFaults();
@@ -22,11 +22,11 @@ class MemoryManagementUnit {
 
     private:
         // MemoryManagementUnit(); // ??
-        int page_access_count_ = 0;
-        int page_in_faults_ = 0;
-        // TLB tlb_;
-        int tlb_access_count_ = 0;
-        int tlb_faults_ = 0;
+        int page_access_count_;
+        int page_in_faults_;
+        TLB tlb_;
+        int tlb_access_count_;
+        int tlb_faults_;
 
 };
 
