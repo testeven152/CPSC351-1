@@ -10,11 +10,6 @@ using std::string;
 #include "Hardware/Word.hpp"
 #include "Hardware/RAM.hpp"
 
-const int PAGE_SIZE = 256;
-const int FRAME_SIZE = 256;
-const int FRAMES = 256;
-const int TLB_SIZE = 16;
-
 
 int main() {
 
@@ -38,9 +33,9 @@ int main() {
 
     // Below displays page fault rate and tlb hit rate
     double pagefaultrate = (MMU.pageFaults()/MMU.pageAccesses());
-    double tlbhitrate = (MMU.tlbFaults()/MMU.tlbAccesses());
-    std::cout << "Page Fault Rate: " << pagefaultrate;
-    std::cout << "TLB Hit Rate: " << tlbhitrate;
+    double tlbhitrate = ((MMU.tlbAccesses()-MMU.tlbFaults())/MMU.tlbAccesses());
+    std::cout << "Page Fault Rate: " << pagefaultrate << "\n";
+    std::cout << "TLB Hit Rate: " << tlbhitrate << "\n";
 
     return 0;
 

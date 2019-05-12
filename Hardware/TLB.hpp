@@ -7,6 +7,6 @@ class TLB {
 
 struct TLBentry {
     public:
-        Address pagenumber;
-        Address framenumber;
+        Word pagenumber;
+        Word framenumber;
 };

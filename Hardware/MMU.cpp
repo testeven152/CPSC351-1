@@ -11,6 +11,17 @@ MemoryManagementUnit::MemoryManagementUnit(){
 
 void MemoryManagementUnit::read(Address logicaladdress, ProcessControlBlock& pcb, Ram ram, unsigned char& data) {
 
+   
+    //tlb search
+    tlb_access_count_++;
+    for(int i = 0; i < 16; i++){
+        if(tlb_.table[i].pagenumber.value_ == logicaladdress.page().value_){
+            ram.read(tlb_.table[i].framenumber.value_, logicaladdress.displacement(), data);
+            break;
+        } 
+    }
+    tlb_faults_++;
+
     if(pcb.PageTable[logicaladdress.page().value_].valid) {
         page_access_count_++;
         ram.read(pcb.PageTable[logicaladdress.page().value_].frameNumber,logicaladdress.displacement(), data);
