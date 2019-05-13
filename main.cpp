@@ -10,6 +10,7 @@ using std::string;
 #include "Hardware/Word.hpp"
 #include "Hardware/RAM.hpp"
 #include "Hardware/BackingStore.hpp"
+#include "OperatingSystem/PageReplacementAlgorithm.hpp"
 
 int main() {
 
@@ -19,6 +20,7 @@ int main() {
     MemoryManagementUnit MMU;
     MemoryManager MM;
     Ram ram;
+    PageReplacementAlgorithm pra;
 
     while(std::cin >> logicaladdress.value_) { // reads input from addresses.txt. currently reads from value_ because i dont know how to implement int uint32_t()
         try {

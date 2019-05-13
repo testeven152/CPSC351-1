@@ -20,6 +20,8 @@ void MemoryManagementUnit::read(Address logicaladdress, ProcessControlBlock& pcb
     }
     tlb_faults_++;
 
+    pra.updateUsage(logicaladdress.page()):
+
     if(pcb.PageTable[logicaladdress.page().value_].valid) {
         page_access_count_++;
         ram.read(pcb.PageTable[logicaladdress.page().value_].frameNumber,logicaladdress.displacement(), data);

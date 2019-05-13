@@ -3,9 +3,9 @@
 class PageReplacementAlgorithm {
     public:
         // ~PageReplacementAlgorithm();
-        // struct Word findVictim();
+        struct Word findVictim();
         // PageReplacementAlgorithm& getPRA();
-        // void updateUsage();
+        void updateUsage();
     protected:
         // PageReplacementAlgorithm();
     private:
@@ -14,17 +14,17 @@ class PageReplacementAlgorithm {
 
 class FirstInFirstOutAlgorithm : public PageReplacementAlgorithm {
     public:
-        // struct Word findVictim();
+        struct Word findVictim();
         // FirstInFirstOutAlgorithm();
     private:
-        // struct Word front;
+        struct Word front;
 };
 
 class LeastRecentlyUsedAlgorithm : public PageReplacementAlgorithm {
     public:
         struct Word findVictim();
         LeastRecentlyUsedAlgorithm();
-        void updateUsage();
+        void updateUsage(struct Word page);
     private:
         UsedList lruList;
 };
