@@ -15,5 +15,5 @@ class BackingStore {
         void read(struct Word page, struct FRAME & data);
     private:
         std::basic_ifstream<char> media;
-        BackingStore();
+        // BackingStore();
 };

@@ -4,6 +4,7 @@
 #include "Word.hpp"
 #include "TLB.hpp"
 #include "RAM.hpp"
+#include "BackingStore.hpp"
 
 class MemoryManagementUnit {
     public:

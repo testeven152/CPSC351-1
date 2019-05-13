@@ -9,7 +9,7 @@ using std::string;
 #include "OperatingSystem/PCB.hpp"
 #include "Hardware/Word.hpp"
 #include "Hardware/RAM.hpp"
-
+#include "Hardware/BackingStore.hpp"
 
 int main() {
 

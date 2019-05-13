@@ -3,6 +3,7 @@
 #include "../Hardware/Word.hpp"
 #include "PCB.hpp"
 
+
 class MemoryManager {
     public:
         // MemoryManager& instance();
@@ -10,20 +11,19 @@ class MemoryManager {
         // MemoryManager& operator=();
         void pageIn(struct Word pagenumber, struct ProcessControlBlock& pcb);
     private:
-        struct FreeFrameList freeFrames_(256);
+        struct FreeFrameList freeFrames_;
         // MemoryManager();
 
 };
 
 struct FreeFrameList { //implemented as a queue
 
-    int front, rear, size;
+    int front, rear;
     int* queue;
-    FreeFrameList(int s)
+    FreeFrameList()
     {
         queue = new int;
-        size = s;
-        for(int i = 0; i < s; i++) {
+        for(int i = 0; i < 256; i++) {
             queue[i] = i + 1;
             rear++;
         }

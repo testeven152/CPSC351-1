@@ -7,6 +7,6 @@ void BackingStore::read(struct Word page, struct FRAME & data){
 }
 
 BackingStore::BackingStore() {
-   // media("BACKING_STORE.bin", std::ifstream::binary);
+   media("BACKING_STORE.bin", ios::binary);
 }
 
