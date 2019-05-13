@@ -3,7 +3,7 @@
 class PageReplacementAlgorithm {
     public:
         // ~PageReplacementAlgorithm();
-        // Word findVictim();
+        // struct Word findVictim();
         // PageReplacementAlgorithm& getPRA();
         // void updateUsage();
     protected:
@@ -14,17 +14,40 @@ class PageReplacementAlgorithm {
 
 class FirstInFirstOutAlgorithm : public PageReplacementAlgorithm {
     public:
-        // Word findVictim();
+        // struct Word findVictim();
         // FirstInFirstOutAlgorithm();
     private:
-        // Word front;
+        // struct Word front;
 };
 
 class LeastRecentlyUsedAlgorithm : public PageReplacementAlgorithm {
     public:
-        // Word findVictim();
-        // LeastRecentlyUsedAlgorithm();
-        // void updateUsage();
+        struct Word findVictim();
+        LeastRecentlyUsedAlgorithm();
+        void updateUsage();
     private:
-        // UsedList lruList;
+        UsedList lruList;
+};
+
+class UsedList { //stack implementation
+    int top;
+    int *arr;
+    int capacity;
+    
+    public:
+        UsedList() {
+            arr = new int[256];
+            capacity = 256;
+            top = -1;
+        }
+
+        void push(int x) {
+            arr[++top] = x;
+        }
+
+        void pop(){
+            return arr[top--];
+        }
+
+
 };

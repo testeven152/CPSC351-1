@@ -12,7 +12,7 @@ void MemoryManager::pageIn(struct Word pagenumber, struct ProcessControlBlock& p
         freeFrames_.pop();
     } else {
         //PRA b/c this means there are no empty frames in RAM
-        framenumber = findvictim() //returns framenumber to be chosen
+        framenumber = findvictim(); //returns framenumber to be chosen
 
     }
     pcb.PageTable[pagenumber.value_] = framenumber;
